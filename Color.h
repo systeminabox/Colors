@@ -61,4 +61,3 @@ inline void Colors::RemoveColor()
 Colors::~Colors()
 {
 }
-void main();
