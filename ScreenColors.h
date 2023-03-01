@@ -4,7 +4,7 @@
 #include <windows.h>
 using namespace std;
 HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);
-class Colors
+class ScreenColors
 {
 public:
 	
@@ -28,36 +28,12 @@ public:
 
 
 
-	Colors();
+	ScreenColors();
 	void SetTextColor(int color);
 	void SetBackgroundColor(int color);
 	void RemoveColor();
-	~Colors();
+	~ScreenColors();
 
 private:
 
 };
-
-Colors::Colors()
-{
-}
-
-inline void Colors::SetTextColor(int color)
-{
-	SetConsoleTextAttribute(h, color);
-}
-
-inline void Colors::SetBackgroundColor(int color)
-{
-	color = color + 15;
-	SetConsoleTextAttribute(h, color);
-}
-
-inline void Colors::RemoveColor()
-{
-	SetConsoleTextAttribute(h, defaultWhite);
-}
-
-Colors::~Colors()
-{
-}
